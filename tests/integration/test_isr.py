@@ -6,7 +6,7 @@ from src.parsers import IRSParser
 
 class TestISR:
     def _create_irs_instance(self):
-        filename = "input/irs_full.txt"
+        filename = "tests/files/expected/integration/irs/input/irs_full.txt"
         return IRSParser(
             file_handler=FileHandler(),
             filename=filename,

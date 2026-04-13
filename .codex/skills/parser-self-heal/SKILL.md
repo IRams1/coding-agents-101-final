@@ -21,15 +21,16 @@ Detect and fix parsing errors in fixed-width file processors by comparing code a
 ## Output format
 
 Provide:
-- Field layout extracted from documentation (field name, position, length, data type) stored in the reference folder as a json file.
+- Field layout extracted from documentation (field name, position, length, data type) stored in this skill references folder as a json file.
 - Apply code corrections to fix the mismatches.
-- Create a file named "{parser}_analysis" with a list of identified mismatches with details (field name, expected vs actual positions, lengths, data types).
+- Create a file named "{parser}_analysis.md" with a list of identified mismatches with details (field name, expected vs actual positions, lengths, data types).
 - Summary of changes made to the parser.
 
 ## Constraints
 
 - Do not introduce new features or change existing functionality beyond correcting parsing errors.
-- Ignore the existance of a legacy short version of the parser and only focus on the current implementation.
+- Only correct field positions, lengths, and data types to match the documentation.
+- Ignore any legacy layouts. Assume the input files will be in the documented format. If the documentation includes multiple layouts, prioritize the most recent or commonly used one.
 - Preserve code style and structure while applying corrections.
 - Ensure that the corrected parser still passes all existing tests.
 - Do not verge from the documented field layouts when suggesting corrections.

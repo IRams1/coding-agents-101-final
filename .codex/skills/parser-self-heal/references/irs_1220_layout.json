@@ -1,0 +1,63 @@
+{
+  "source": "IRS Publication 1220 (Tax Year 2025), Part C Record Format Specifications and Record Layouts",
+  "records": {
+    "T": [
+      {"field": "RECORD TYPE", "position": "1", "length": 1, "type": "alpha"},
+      {"field": "PAYMENT YEAR", "position": "2-5", "length": 4, "type": "numeric"},
+      {"field": "TRANSMITTER TIN", "position": "7-15", "length": 9, "type": "numeric"},
+      {"field": "TRANSMITTER CONTROL CODE", "position": "16-20", "length": 5, "type": "alphanumeric"},
+      {"field": "TRANSMITTER NAME", "position": "30-69", "length": 40, "type": "alpha"},
+      {"field": "CONTACT NAME", "position": "304-343", "length": 40, "type": "alpha"},
+      {"field": "CONTACT TELEPHONE NUMBER & EXTENSION", "position": "344-358", "length": 15, "type": "alphanumeric"},
+      {"field": "CONTACT EMAIL ADDRESS", "position": "359-408", "length": 50, "type": "alphanumeric"}
+    ],
+    "A": [
+      {"field": "RECORD TYPE", "position": "1", "length": 1, "type": "alpha"},
+      {"field": "PAYMENT YEAR", "position": "2-5", "length": 4, "type": "numeric"},
+      {"field": "ISSUER TAXPAYER IDENTIFICATION NUMBER (TIN)", "position": "12-20", "length": 9, "type": "numeric"},
+      {"field": "FIRST ISSUER NAME LINE", "position": "53-92", "length": 40, "type": "alpha"},
+      {"field": "SECOND ISSUER NAME LINE", "position": "93-132", "length": 40, "type": "alpha"},
+      {"field": "ISSUER SHIPPING ADDRESS", "position": "134-173", "length": 40, "type": "alphanumeric"},
+      {"field": "ISSUER CITY", "position": "174-213", "length": 40, "type": "alpha"},
+      {"field": "ISSUER STATE", "position": "214-215", "length": 2, "type": "alpha"},
+      {"field": "ISSUER ZIP CODE", "position": "216-224", "length": 9, "type": "alphanumeric"}
+    ],
+    "B": [
+      {"field": "RECORD TYPE", "position": "1", "length": 1, "type": "alpha"},
+      {"field": "PAYMENT YEAR", "position": "2-5", "length": 4, "type": "numeric"},
+      {"field": "PAYEE TIN", "position": "12-20", "length": 9, "type": "numeric"},
+      {"field": "PAYMENT AMOUNT 1", "position": "55-66", "length": 12, "type": "signed_numeric_cents"},
+      {"field": "PAYMENT AMOUNT 2", "position": "67-78", "length": 12, "type": "signed_numeric_cents"},
+      {"field": "PAYMENT AMOUNT 3", "position": "79-90", "length": 12, "type": "signed_numeric_cents"},
+      {"field": "PAYMENT AMOUNT 4", "position": "91-102", "length": 12, "type": "signed_numeric_cents"},
+      {"field": "PAYMENT AMOUNT 5", "position": "103-114", "length": 12, "type": "signed_numeric_cents"},
+      {"field": "PAYMENT AMOUNT 6", "position": "115-126", "length": 12, "type": "signed_numeric_cents"},
+      {"field": "PAYMENT AMOUNT 7", "position": "127-138", "length": 12, "type": "signed_numeric_cents"},
+      {"field": "PAYMENT AMOUNT 8", "position": "139-150", "length": 12, "type": "signed_numeric_cents"},
+      {"field": "PAYMENT AMOUNT 9", "position": "151-162", "length": 12, "type": "signed_numeric_cents"},
+      {"field": "PAYMENT AMOUNT A", "position": "163-174", "length": 12, "type": "signed_numeric_cents"},
+      {"field": "PAYMENT AMOUNT B", "position": "175-186", "length": 12, "type": "signed_numeric_cents"},
+      {"field": "PAYMENT AMOUNT C", "position": "187-198", "length": 12, "type": "signed_numeric_cents"},
+      {"field": "PAYMENT AMOUNT D", "position": "199-210", "length": 12, "type": "signed_numeric_cents"},
+      {"field": "PAYMENT AMOUNT E", "position": "211-222", "length": 12, "type": "signed_numeric_cents"},
+      {"field": "PAYMENT AMOUNT F", "position": "223-234", "length": 12, "type": "signed_numeric_cents"},
+      {"field": "PAYMENT AMOUNT G", "position": "235-246", "length": 12, "type": "signed_numeric_cents"},
+      {"field": "PAYMENT AMOUNT H", "position": "247-258", "length": 12, "type": "signed_numeric_cents"},
+      {"field": "PAYMENT AMOUNT J", "position": "259-270", "length": 12, "type": "signed_numeric_cents"},
+      {"field": "FIRST PAYEE NAME LINE", "position": "288-327", "length": 40, "type": "alpha"},
+      {"field": "PAYEE MAILING ADDRESS", "position": "368-407", "length": 40, "type": "alphanumeric"},
+      {"field": "PAYEE STATE", "position": "488-489", "length": 2, "type": "alpha"},
+      {"field": "PAYEE ZIP CODE", "position": "490-498", "length": 9, "type": "alphanumeric"}
+    ],
+    "C": [
+      {"field": "RECORD TYPE", "position": "1", "length": 1, "type": "alpha"},
+      {"field": "NUMBER OF PAYEES", "position": "2-9", "length": 8, "type": "numeric"},
+      {"field": "CONTROL TOTAL 1", "position": "16-33", "length": 18, "type": "signed_numeric_cents"}
+    ],
+    "F": [
+      {"field": "RECORD TYPE", "position": "1", "length": 1, "type": "alpha"},
+      {"field": "NUMBER OF A RECORDS", "position": "2-9", "length": 8, "type": "numeric"},
+      {"field": "TOTAL NUMBER OF PAYEES", "position": "50-57", "length": 8, "type": "numeric"}
+    ]
+  }
+}

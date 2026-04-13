@@ -63,3 +63,11 @@ Any developer that whishes to debug and ensure his/her parsing functions follow 
 ### How it works?
 
 The Skill reads provided documentation to extract expected field layouts then it compares the extracted layouts against the current code implementation and identify mismatches in field positions, lengths, and data types. The expected output is that the skill generates suggested corrections to align code with documentation and applies corrections and validate the updated parser.
+
+### How to use it?
+
+1. Setup the repo with the requirement file using the `broken_parser` branch
+2. Open a Codex and run the `$parser-self-heal` skill.
+3. The parser should be the same as in the main branch.
+4. In the `.codex/skills/parser-self-heal/references/` folder you should see a json file containing the parser layout based on the documentation.
+5. In the root folder you should find an `analysis.md` file

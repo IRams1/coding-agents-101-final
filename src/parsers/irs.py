@@ -157,46 +157,46 @@ class IRSParser(Parser):
         return {
             "RECORD TYPE": line[0:1],
             "TAX YEAR": line[1:5],
-            "TRANSMITTER TIN": line[6:15].strip(),
-            "TRANSMITTER CONTROL CODE": line[15:20].strip(),
-            "TRANSMITTER NAME": line[29:69].rstrip(),
-            "CONTACT NAME": line[303:343].rstrip(),
-            "CONTACT PHONE": line[343:358].strip(),
-            "EMAIL": line[358:408].strip(),
+            "TRANSMITTER TIN": line[7:16].strip(),
+            "TRANSMITTER CONTROL CODE": line[16:21].strip(),
+            "TRANSMITTER NAME": line[30:70].rstrip(),
+            "CONTACT NAME": line[304:344].rstrip(),
+            "CONTACT PHONE": line[344:359].strip(),
+            "EMAIL": line[359:409].strip(),
         }
 
     def _parse_a_record(self, line):
-        first_name = line[52:92].rstrip()
-        second_name = line[92:132].rstrip()
+        first_name = line[53:93].rstrip()
+        second_name = line[93:133].rstrip()
         payer_name = f"{first_name} {second_name}".strip()
         return {
             "RECORD TYPE": line[0:1],
             "TAX YEAR": line[1:5],
-            "PAYER TIN": line[11:20].strip(),
+            "PAYER TIN": line[12:21].strip(),
             "PAYER NAME": payer_name,
-            "ADDRESS": line[133:173].rstrip(),
-            "CITY": line[173:213].rstrip(),
-            "STATE": line[213:215].strip(),
-            "ZIP": line[215:224].strip(),
+            "ADDRESS": line[134:174].rstrip(),
+            "CITY": line[174:214].rstrip(),
+            "STATE": line[214:216].strip(),
+            "ZIP": line[216:225].strip(),
         }
 
     def _parse_b_record(self, line):
         return {
             "RECORD TYPE": line[0:1],
             "TAX YEAR": line[1:5],
-            "PAYEE TIN": line[11:20].strip(),
-            "NAME": line[287:327].rstrip(),
-            "ADDRESS": line[367:407].rstrip(),
-            "STATE": line[487:489].strip(),
-            "ZIP": line[489:498].strip(),
+            "PAYEE TIN": line[12:21].strip(),
+            "NAME": line[288:328].rstrip(),
+            "ADDRESS": line[368:408].rstrip(),
+            "STATE": line[488:490].strip(),
+            "ZIP": line[490:499].strip(),
             "AMOUNT": self._first_non_zero_payment_amount(line),
         }
 
     def _parse_c_record(self, line):
         return {
             "RECORD TYPE": line[0:1],
-            "TOTAL RECORDS": self._to_int(line[1:9]),
-            "TOTAL AMOUNT": self._to_amount(line[15:33], cents=True),
+            "TOTAL RECORDS": self._to_int(line[2:10]),
+            "TOTAL AMOUNT": self._to_amount(line[16:34], cents=True),
         }
 
     def _parse_f_record(self, line):

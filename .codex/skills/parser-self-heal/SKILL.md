@@ -30,7 +30,6 @@ Provide:
 
 - Do not introduce new features or change existing functionality beyond correcting parsing errors.
 - Only correct field positions, lengths, and data types to match the documentation.
-- Ignore any legacy layouts. Assume the input files will be in the documented format. If the documentation includes multiple layouts, prioritize the most recent or commonly used one.
 - Preserve code style and structure while applying corrections.
 - Ensure that the corrected parser still passes all existing tests.
 - Do not verge from the documented field layouts when suggesting corrections.
